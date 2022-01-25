@@ -1,0 +1,7 @@
+React we'll be using a tech called controlled components
+
+One Source of Truth
+  React Controls:
+    What is shown
+    What happens the user types
+  Input elements controlled in this way are called 'controlled components'
