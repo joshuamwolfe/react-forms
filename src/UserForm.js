@@ -5,15 +5,20 @@ const UserForm = () => {
   const handleChange = (e) => {
     setUsername(e.target.value);
   };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert(`Created User, ${username}`);
+    setUsername("");
+  };
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <input
         type="text"
         placeholder="username"
         value={username}
         onChange={handleChange}
       />
-      <button>Add me to List</button>
+      <button>Submit</button>
     </form>
   );
 };
