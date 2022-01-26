@@ -2,23 +2,26 @@ import React, { useState } from "react";
 import "./UserForm.css";
 
 const UserForm = () => {
-  const [formData, setFormData] = useState({
+  const initialState = {
     username: "",
     email: "",
-  });
-
+    password: "",
+  };
+  const [formData, setFormData] = useState(initialState);
   const handleChange = (e) => {
-    const { name, value } = e.target.value;
+    const { name, value } = e.target;
     setFormData((data) => ({
       ...data,
       [name]: value,
     }));
   };
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   alert(`Created User, ${username}`);
-  //   setUsername("");
-  // };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const { username, email, password } = formData;
+    alert(`Created User, ${username} w/ email ${email} & password ${password}`);
+    setFormData(initialState);
+  };
 
   return (
     <form>
@@ -42,7 +45,16 @@ const UserForm = () => {
         onChange={handleChange}
       />
 
-      <button>Submit</button>
+      <label htmlFor="password">Password</label>
+      <input
+        type="password"
+        placeholder="password"
+        name="password"
+        id="password"
+        value={formData.password}
+        onChange={handleChange}
+      />
+      <button>Add me to list!</button>
     </form>
   );
 };
