@@ -5,3 +5,7 @@ One Source of Truth
     What is shown
     What happens the user types
   Input elements controlled in this way are called 'controlled components'
+
+adding a handle submit function for every input is repeating yourself.
+
+REMEMBER DRY
