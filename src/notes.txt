@@ -18,4 +18,6 @@ Passing Data Up to a Parent Components
   to update its state after the form submission
   - The parent will pass its doSomethingOnSubmit method down as a prop to the
   child.
-  -The child component calls this method, updating the parents state.
+  - The child component calls this method, updating the parents state.
+  - The child is still appropriately 'dumber', all it knows is to pass its data
+  into a function it was given.
