@@ -9,3 +9,13 @@ One Source of Truth
 adding a handle submit function for every input is repeating yourself.
 
 REMEMBER DRY
+
+Passing Data Up to a Parent Components
+  - In react we generally have downward data flow. 'Smart'  parent components with
+  simple child components.
+  - But it is common for form components to manage their own state
+  - The smarter parent component usually has a doSomethingOnSubmit method
+  to update its state after the form submission
+  - The parent will pass its doSomethingOnSubmit method down as a prop to the
+  child.
+  -The child component calls this method, updating the parents state.
